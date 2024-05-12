@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSP OPENSOURCE SOFTWARE </title>
+  
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/style.css"/>
+
+  
+ 
+  </head>
+  <body>  
+  <span style ="font-family:'Hi Melody' !important;">
+    <main id="app">
+      <section class="section-intro">
+        <header id="header">
+          <h1 class="txt-invisible">Open Source Software class's Portfolio</h1>
+          <nav>
+            <ul class="nav-list">
+              <li><a href="about.html" class="list-link"><i class="bi bi-file-person"></i> <span>More about</span></a></li>
+              <li><a href="#email" class="list-link"><i class="bi bi-envelope"></i> <span>email</span></a></li>
+              <li><a href="https://www.instagram.com/essay_jung/" class="list-link"><i class="bi bi-instagram"></i> <span>Instagram</span></a></li>
+              <li><a href="https://github.com/jsp-KW" class="list-link btn-code"><i class="bi bi-github"></i> <span>GitHub</span></a></li>
+            </ul>
+            
+          </nav>
+     
+        </header>
+
+        <div class="cont-intro">
+          <a name="info"></a>
+          <img id ="first_img" src="img/me1.jpg" alt="프로필 이미지" />
+         
+        </div>
+      </section>
+
+      <section class="aboutMe">
+        <a name="about"></a>
+        <div class="icon-text">
+          <i class="bi bi-list-check"></i>
+          <h2>About Me</h2>
+        </div>
+        
+          <div class="info-about">
+            <dl class="txt-about typing">
+              <div>
+                <dt>이름</dt>
+                <dd>정수필</dd>
+              </div>
+              <div>
+                <dt>생년월일</dt>
+                <dd>2000.11.1</dd>
+              </div>
+              <div>
+                <dt>거주지</dt>
+                <dd>서울시 강동구 or 노원구 월계동</dd>
+              </div>
+              <div>
+                <dt>학교/전공</dt>
+                <dd>광운대학교/정보융합학부</dd>
+              </div>
+            </dl>
+        
+          </div>
+        </div>
+      </section>
+
+      <section class="board">
+        <a name="방명록"></a>
+        <div class ="icon-comment" >
+        <i class="bi bi-chat-square-text"></i>
+        <h2> 방명록 </h2>
+
+      </div>
+        <div id ="guest_entry">
+            <!--동적 방명록-->
+        </div>
+        <form id = "guest_form">
+            <label for="guest_name">이름: </label><br>
+            <input type ="text" id="guest_name" name ="guest_name"><br>
+            <label for="guest_msg">댓글:</label><br>
+            <textarea id="guest_msg" name="guest_msg" rows="5" cols="10"></textarea><br>
+            <button type="submit">방명록 작성하기</button>
+        </form>
+
+
+        </section>
+
+
+      </span>
+
+    </main>
+
+
+
+
+
+
+
+
+
+    <script>
+      //사진 변경 (interactive)
+
+      document.getElementById('first_img').addEventListener('click',function(){
+        var cur_img = this.src;
+
+        var new_img = cur_img.includes('me1.jpg') ? 'img/앤디.jpg' : 'img/me1.jpg';
+
+        //이미지 적용
+        this.src = new_img;
+        
+      });
+
+
+      document.getElementById("guest_form").addEventListener("submit", function(event){
+        event.preventDefault();
+    
+        var name = document.getElementById("guest_name").value;
+        var msg = document.getElementById("guest_msg").value;
+
+
+        //유효성 검사
+        if(name === "" ||  msg =="") {
+          alert("방명록 작성이 되지 않았습니다. ");
+          return;
+        }
+
+        write_entry(name,msg);
+
+      });
+        
+
+        function write_entry (name,msg) {
+            
+        var cur_time = new Date().toLocaleString();
+    
+        var entry = document.createElement("div");
+        entry.innerHTML= "<strong>" + name + ":</strong>" + msg + "<span>("+ cur_time + ")</span>";
+
+        var del_btn = document.createElement("button"); 
+        del_btn.textContent = "삭제";
+        del_btn.classList.add("del_btn");
+        
+        del_btn.addEventListener("click", function(){
+          entry.remove(); // 방명록 삭제
+        });
+
+
+        entry.appendChild(del_btn);
+
+        document.getElementById("guest_entry").appendChild(entry); 
+
+        document.getElementById("guest_name").value = "";
+        document.getElementById("guest_msg").value = "";
+      
+    
+
+        }
+
+
+
+        
+
+
+
+    </script>
+    
+
+  </body>
+</html>
