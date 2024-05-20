@@ -42,3 +42,29 @@ body {
     from { width: 0%; opacity: 1; }
     to { width: 100% }
 }
+
+/* Home 버튼 스타일 */
+.home-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: beige; /* 버튼 텍스트 색상 */
+    border: none;
+    border-radius: 5px;
+    font-size: 150px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.5s ease; /* 색상 전환 효과 */
+}
+
+.home-button:hover {
+    color:black; /* 마우스 호버 시 텍스트 색상 변경 */
+}
+#audio-player {
+    position: absolute;
+    top: calc(200px + 20px); /* 상단바 높이 + 추가 여백 */
+    right: 0px; /* 오른쪽 여백 조정 */
+  }
+  

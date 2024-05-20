@@ -1,5 +1,3 @@
-/* style.css */
-
 @charset "utf-8";
 
 .hi-melody-regular {
@@ -65,15 +63,7 @@ body {
     background-color: #ccc;
   }
   
-  /* .bar-ing {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #000;
-  }
-   */
+ 
   .cont-intro {
     display: flex;
     justify-content: center;
@@ -89,7 +79,28 @@ body {
     max-width: 30%;
     height: auto;
     object-fit: contain;
+  
+    
   }
+  .cont-intro img:hover {
+    animation: rotateFrame 2s linear infinite; /* 마우스를 올렸을 때 애니메이션 적용 */
+}
+
+@keyframes rotateFrame {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(20deg);
+  }
+  75% {
+      transform: rotate(-20deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
 
   @media (max-width: 500px) {
 
@@ -205,11 +216,25 @@ body {
     margin: 0 auto; /* 가운데 정렬 */
     letter-spacing: .15em; /* 글자 간격 설정 */
     opacity: 1; /* 초기에는 텍스트가 보이지 않도록 설정 */
-    animation: typing 3s steps(40, end) forwards; /* 타이핑 애니메이션 */
+    animation: typing 5s steps(40, end) infinite,forwards, blink 1s step-end infinite; /* 타이핑 애니메이션 */
   }
 
 /* 타이핑 애니메이션 keyframes 설정 */
 @keyframes typing {
   from { width: 0%; opacity: 1; }
   to { width: 100% }
+}
+
+
+/*커서 모양 깜빡이는 기능 추가적인 구현*/
+@keyframes blink {
+  from, to  {border-color: transparent;}
+  50% {border-color:white;}
+}
+
+
+#audio-player {
+  position: absolute;
+  top: calc(200px + 20px); /* 상단바 높이 + 추가 여백 */
+  right: 0px; /* 오른쪽 여백 조정 */
 }

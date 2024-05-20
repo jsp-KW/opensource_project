@@ -15,10 +15,20 @@
 </head>
 <body>
     <span style ="font-family:'Hi Melody' !important;">
+
+        
+        <audio id="audio-player" controls>
+            <source src="audio/멜로가-체질-OST-Part-3_-장범준-_Beom-June-Jang_-흔들리는-꽃들-속에서-네-샴푸향이-느껴진거야.mp3" type="audio/mpeg">
+          </audio>
+        
+        <a href="index.html" class="home-button">Home</a>
+        
+        
         <h1>Too Much Information About Me</h1>
+
         <!-- 타이핑 효과를 적용할 요소에 typing 클래스 추가 -->
         <p class="typing">
-           
+       
         </p>
     </span>
     <script>
@@ -32,9 +42,9 @@
             '선호하는 프로그래밍 언어\nJava, C++, Python',
             '관심있는 분야\n투자, 주식, 블록체인, 금융'
         ];
-        const typingDelay = 10; // ms
-        const erasingDelay = 50; // ms
-        const newTextDelay = 2000; // ms
+        const typingDelay = 10; // 10ms
+        const erasingDelay = 50; // 50ms
+        const newTextDelay = 2000; // 2000ms
 
         let textArrayIndex = 0;
         let charIndex = 0;
