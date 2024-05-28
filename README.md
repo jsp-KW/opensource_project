@@ -1,11 +1,11 @@
 # 활용한 오픈소스 링크
 
-# google font
-# https://fonts.googleapis.com
-# bootstrap
-# https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css
-# opensource software lecture note /박규동 교수님/강의자료/
-# favicorn
+- google font
+- https://fonts.googleapis.com
+- bootstrap
+- https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css
+- opensource software lecture note /박규동 교수님/강의자료/
+- favicorn
 
 # option 구현
  방명록 기능 fastapi 를 통하여 작성자, 작성내용, 작성시간을 구현했습니다.
